@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.3)  31 MAY 2024 13:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.3)  31 MAY 2024 13:47
 entering extended mode
 **e:/Impo/Lavoro/CV/Latex/CVRomaniniGiacomoEng.tex
 (e:/Impo/Lavoro/CV/Latex/CVRomaniniGiacomoEng.tex
@@ -447,26 +447,35 @@ LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
 (Font)              Font shape `T1/pbk/l/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <14.4> not available
 (Font)              Font shape `T1/pbk/l/it' tried instead on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 22.
 LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <10> not available
 (Font)              Font shape `T1/pbk/db/n' tried instead on input line 24.
 
 Overfull \hbox (3.21237pt too wide) in paragraph at lines 28--29
-[] \T1/pbk/l/n/10 Iot: Project with mi-cro-con-trollers and server com-
+[] $[]$\T1/pbk/l/n/10 : Project with mi-cro-con-trollers and server com-
  []
 
 
-Overfull \hbox (16.5224pt too wide) in paragraph at lines 30--32
-[]\T1/pbk/l/n/10 Software Sys-tems En-gi-neer-ing: project with a domain-
+Overfull \hbox (18.04218pt too wide) in paragraph at lines 30--32
+[]$[]$\T1/pbk/l/n/10 : project with a domain-
+ []
+
+
+Overfull \hbox (0.56245pt too wide) in paragraph at lines 37--39
+[]$\T1/pbk/l/n/10 : cov-ered par-al-leliza-tion and co-
  []
 
 \raising=\dimen162
 
-Underfull \hbox (badness 1448) in paragraph at lines 63--63
+Underfull \hbox (badness 1448) in paragraph at lines 64--64
 []|\T1/pbk/l/it/10 Event Shar-ing ap-pli-ca-tion over Azure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []|\T1/pbk/l/it/10 Software En-gi-neer-ing project, with
  []
 
@@ -474,22 +483,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
 (E:\Secondarie\Programmi\latex\tex/latex/marvosym\umvs.fd)
 \raising=\dimen164
 
-Overfull \hbox (0.83769pt too wide) in paragraph at lines 79--80
+Overfull \hbox (0.83769pt too wide) in paragraph at lines 80--81
 \T1/pbk/l/it/14.4 Ju-nior De-vel-oper, Soft-ware De-signer
  []
 
 
-Overfull \hbox (3.1828pt too wide) in paragraph at lines 81--84
+Overfull \hbox (3.1828pt too wide) in paragraph at lines 82--85
 \T1/pbk/l/n/10 prob-lems and many to many re-la-tion-ships' or-phans
  []
 
 
-Overfull \hbox (3.2643pt too wide) in paragraph at lines 81--84
+Overfull \hbox (3.2643pt too wide) in paragraph at lines 82--85
 \T1/pbk/l/n/10 the load-ing of some data, by op-ti-miz-ing SQL queries
  []
 
 
-Overfull \hbox (3.46278pt too wide) in paragraph at lines 81--84
+Overfull \hbox (3.46278pt too wide) in paragraph at lines 82--85
 \T1/pbk/l/n/10 re-mov-ing un-nec-es-sary joins and im-ple-ment-ing pag-
  []
 
@@ -511,7 +520,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  122i,11n,122p,10967b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {E:/Secondarie/Programmi/latex/fonts/enc/dvips/base/8r.enc}<E:/Secondarie/Programmi/latex/fonts/type1/public/marvosym/marvosym.pfb><E:/Secondarie/Programmi/latex/fonts/type1/urw/bookman/ubkd8a.pfb><E:/Secondarie/Programmi/latex/fonts/type1/urw/bookman/ubkl8a.pfb><E:/Secondarie/Programmi/latex/fonts/type1/urw/bookman/ubkli8a.pfb>
-Output written on CVRomaniniGiacomoEng.pdf (1 page, 64633 bytes).
+Output written on CVRomaniniGiacomoEng.pdf (1 page, 64838 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)

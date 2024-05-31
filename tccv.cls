@@ -10,17 +10,7 @@
 %
 % Based on the original idea by Alessandro Plasmati found at
 % http://www.latextemplates.com/template/two-column-one-page-cv
-%
-% The most relevant changes from his work are:
-%
-% * this is a class, not a template document;
-% * tccv is based on scrartcl (from Koma-script), not on article;
-% * the fonts are selected from the PSNFSS collection, so no
-%   custom font installation should be required;
-% * heavily based the implementation on custom environments and
-%   macros, so the document is much easier to read (and customize);
-% * it is plain LaTeX/Koma-script, so the CV can be compiled
-%   with the usual tools, latex and pdflatex included.
+
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tccv}
@@ -60,7 +50,7 @@
 \color[HTML]{303030} % Default foreground color
 \definecolor{link}{HTML}{506060} % Hyperlinks
 \hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
-\setkomafont{disposition}{\color[HTML]{801010}}
+\setkomafont{disposition}{\color[HTML]{1111ec}}
 \setkomafont{section}{\scshape\Large\mdseries}
 
 % In tccv \part must contain the subject of the curriculum vitae.
@@ -108,7 +98,7 @@
     \needspace{0.5\textheight}%
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
-    \colorbox[HTML]{F5DD9D}{%
+    \colorbox[HTML]{ffe599}{%
     \begin{tabularx}{\boxwidth}{c|X}
     \Writinghand & {#2}\smallskip\\
     \Letter      & \href{mailto:#3}{#3}
