@@ -1,4 +1,4 @@
-% Copyright (C) 2012  Nicola Fontana <ntd at entidi.it>
+% Copyright (C) 2012, 2013, 2021 Nicola Fontana <ntd at entidi.it>
 %
 % This program can be redistributed and/or modified under
 % the terms of the LaTeX Project Public License, either
@@ -11,10 +11,9 @@
 % Based on the original idea by Alessandro Plasmati found at
 % http://www.latextemplates.com/template/two-column-one-page-cv
 
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tccv}
-              [2012/11/09 v1.0
+              [2021/12/16 v1.3.1
  Two Column Curriculum Vitae]
 
 \LoadClass[10pt]{scrartcl}
@@ -25,25 +24,20 @@
 
 % Capitalize words of at least a minimum length (default to 3 chars).
 % The text is capitalized before being expanded.
-%
 % This macro uses Lua to do the job but fails gracefully (that is,
 % return the text as is) if \directlua is not available.
-%
-% |[
-% \ucwords[optional: miminum length]{text}
-% ]|
 \newcommand\ucwords[2][3]{%
     % Fails gracefully if not in LuaLaTeX
     \providecommand\directlua[1]{#2}%
     \directlua{%
-	local minlen=tonumber("#1")
-	local src="\luaescapestring{\unexpanded{#2}}"
-	local dst={}
-	for w in src:gmatch('[^\string\%s]+') do
-	    if w:len() >= minlen then w = w:sub(1,1):upper()..w:sub(2) end
-	    table.insert(dst, w)
-	end
-	tex.print(dst)}}
+    local minlen=tonumber("#1")
+    local src="\luaescapestring{\unexpanded{#2}}"
+    local dst={}
+    for w in src:gmatch('[^\string\%s]+') do
+        if w:len() >= minlen then w = w:sub(1,1):upper()..w:sub(2) end
+        table.insert(dst, w)
+    end
+    tex.print(dst)}}
 
 \pagestyle{empty}
 \setlength\parindent{0pt}
@@ -60,9 +54,9 @@
 \renewcommand\part[1]{%
     \twocolumn[%
     \begin{center}
-	\vskip-\lastskip%
-	{\usekomafont{part} #1} \medskip\\
-	\bigskip
+    \vskip-\lastskip%
+    {\usekomafont{part} #1} \medskip\\
+    \bigskip
     \end{center}]}
 
 % Overrides the \section command to capitalize every
@@ -76,81 +70,49 @@
     \vskip\raising\hrule height 0.4pt\vskip-\raising}
 \makeatother
 
-% Allow conditionals based on the job name. This can usually be set
-% from a command-line argument: check fausto.en.tex for an example.
-%
-% |[
-% \ifjob{jobname}{content if matches}{content if does not match}
-% ]|
-\newcommand\ifjob[3]{%
-    \edef\JOBNAME{\jobname}%
-    \edef\PIVOT{\detokenize{#1}}%
-    \ifdefstrequal{\JOBNAME}{\PIVOT}{#2}{#3}%
-}
-
 % Renders a personal data box:
-%
-% |[
-% \personal[optional: web site without scheme (no http:// prefix)]
-%          {address}{phone number}{email}
-% ]|
+% \personal[optional: web site]
+%           {address}{email}{phone number}
 \newcommand\personal[4][]{%
     \needspace{0.5\textheight}%
     \newdimen\boxwidth%
     \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
-    \colorbox[HTML]{ffe599}{%
+    \colorbox[HTML]{ffe599}{% Reverted color to user's original
     \begin{tabularx}{\boxwidth}{c|X}
     \Writinghand & {#2}\smallskip\\
-    \Letter      & \href{mailto:#3}{#3}
-    \ifstrempty{#1}{}{\smallskip\\ \Industry & \href{#1}{#1}}
-    \ifstrempty{#4}{}{\smallskip\\ \Gentsroom & \href{#4}{#4}}\\
+    \Letter & \href{mailto:#3}{#3}
+    \ifstrempty{#1}{}{\smallskip\\ \Industry & \href{#1}{#1}} % Reverted \Computer to \Industry
+    \ifstrempty{#4}{}{\smallskip\\ \Telefon & {#4}}\\ % Changed to another common symbol
     \end{tabularx}}}
 
-% Every \item can be followed by one or more paragraphs
-% of description:
-%
-% |[
 % \item{date range}{company}{role}
-%
 % Description of what achieved during this application.
-% ]|
 \newenvironment{eventlist}{%
     \newcommand*\inskip{}
     \renewcommand\item[3]{%
-	\inskip%
-	{\raggedleft\textsc{##1}\\[1pt]}
-	{##2}\\[2pt]
-	{\Large\textit{##3}}
-	\medskip
-	\renewcommand\inskip{\bigskip}}}
+    \inskip%
+    {\raggedleft\textsc{##1}\\[1pt]}
+    {##2}\\[2pt]
+    {\Large\textit{##3}}
+    \medskip
+    \renewcommand\inskip{\bigskip}}}
     {\bigskip}
 
-% Use only \item inside this environment: no other macros
-% are allowed:
-%
-% |[
 % \item[optional: what has been achieved]{years}{subject}{notes}
-% ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	{\textsc{##2}} & {\bfseries ##3} \\
-	\ifstrempty{##1}{}{& {\textsc{##1}} \\}
-	& {\textit{##4}}\medskip\\}
+    {\textsc{##2}} & {\bfseries ##3} \\
+    \ifstrempty{##1}{}{& {\textsc{##1}} \\}
+    & {\textit{##4}}\medskip\\}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
 
-
-% Use only \item inside this environment: no other macros
-% are allowed:
-%
-% |[
 % \item{fact}{description}
-% ]|
 \newenvironment{factlist}{%
     \newdimen\unbaseline
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[2]{%
-	\textsc{##1} & {\raggedright ##2\medskip\\}\\[\unbaseline]}
+    \textsc{##1} & {\raggedright ##2\medskip\\}\\[\unbaseline]}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
 %%
