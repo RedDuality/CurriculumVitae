@@ -66,7 +66,7 @@
 \renewcommand\section[2][]{%
     \old@section[#1]{\ucwords{#2}}%
     \newdimen\raising%
-    \raising=\dimexpr-0.7\baselineskip\relax%
+    \raising=\dimexpr-0.3\baselineskip\relax%
     \vskip\raising\hrule height 0.4pt\vskip-\raising}
 \makeatother
 
@@ -89,14 +89,14 @@
 % Description of what achieved during this application.
 \newenvironment{eventlist}{%
     \newcommand*\inskip{}
-    \renewcommand\item[3]{%
-    \inskip%
-    {\raggedleft\textsc{##1}\\[1pt]}
-    {##2}\\[2pt]
-    {\Large\textit{##3}}
-    \medskip
-    \renewcommand\inskip{\bigskip}}}
-    {\bigskip}
+    \renewcommand\item[3]{% three items
+        \inskip%
+        {\raggedleft\textsc{##1}\\[1pt]} % dates, on the right 
+        {##2}\\[2pt]                        % second item, the institution
+        {\Large\textit{##3}}                % third item, the title
+        \vspace{2pt}                        % space between each item
+        \renewcommand\inskip{\vspace{1pt}}} %redefines inskip
+    }
 
 % \item[optional: what has been achieved]{years}{subject}{notes}
 \newenvironment{yearlist}{%
