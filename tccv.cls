@@ -20,7 +20,7 @@
 
 \setcounter{secnumdepth}{-1}
 \RequirePackage[hmargin=1.25cm,vmargin=1.25cm,twocolumn,columnsep=1.25cm]{geometry}
-\RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor}
+\RequirePackage{bookman,etoolbox,hyperref,marvosym,needspace,tabularx,xcolor, eso-pic}
 
 % Capitalize words of at least a minimum length (default to 3 chars).
 % The text is capitalized before being expanded.
@@ -115,5 +115,22 @@
     \textsc{##1} & {\raggedright ##2\medskip\\}\\[\unbaseline]}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
+
+% Privacy disclaimer (GDPR consent) spanning across both columns
+\newcommand{\privacyDisclaimer}{%
+  \AddToShipoutPictureFG*{%
+    \put(0,15){%
+      \parbox[b][\paperheight][b]{\paperwidth}{%
+        \centering
+        \vspace{0.5em}
+        {\fontsize{6.5 pt}{0pt}\selectfont 
+        According to law 679/2016 of the Regulation of the European Parliament of 27th April 2016,\\[-5pt]
+        I hereby express my consent to process and use my data provided in this CV and application for recruiting purposes.}
+        \vspace{0.5em}
+      }%
+    }%
+  }%
+}
+
 %%
 %% End of file `tccv.cls'.
